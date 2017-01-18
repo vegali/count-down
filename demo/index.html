@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>count down</title>
+</head>
+<body>
+<span id="r_d"></span>天
+<span id="r_h"></span>时
+<span id="r_m"></span>分
+<span id="r_s"></span>秒
+</body>
+<script src="../count-down.js"></script>
+<script>
+    var startTime = new Date();
+    var endTime = new Date(new Date().setHours(new Date().getHours() + 1));
+    var demo = new CountDown({
+        startDate : startTime,
+        endDate : endTime,
+        domD : 'r_d',
+        domH : 'r_h',
+        domM : 'r_m',
+        domS : 'r_s',
+        callBack : function () {
+            alert('到时间了!')
+        }
+    });
+</script>
+</html>
